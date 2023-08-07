@@ -10,7 +10,7 @@ namespace VærkstedsBilRegistreringsApp.Kode
     {
         public static int Alder { get; set; }
 
-        public Køretøj MinBil { get; set; }
+        public Køretøj? MinBil { get; set; }
 
         public string? Fornavn { get; set; }
         
@@ -22,6 +22,8 @@ namespace VærkstedsBilRegistreringsApp.Kode
         {
 
             _visnavn = false;
+
+            
 
         }
 

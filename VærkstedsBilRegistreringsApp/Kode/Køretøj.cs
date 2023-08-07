@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VærkstedsBilRegistreringsApp.Kode
 {
-    internal class Køretøj
+    public class Køretøj
     {
         public string? Mærke { get; set; }
     }
