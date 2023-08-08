@@ -33,9 +33,9 @@ internal class Person
         _visnavn = true;
         Fornavn = forNavn;
         Efternavn = efterNavn;
-        Køretøj<double> MinBil = new("Audi", "A6", 3.5);
+        Køretøj<double> MinBil = new("Audi", "A6", 3.5, "Niels", "Olesen", "34343434");
      
-        Køretøj<string> MinCykel = new("Audi", "A6", "20cm - 50cm");
+        Køretøj<string> MinCykel = new("Audi", "A6", "20cm - 50cm", "Niels", "Olesen", "34343434");
       
 
     }

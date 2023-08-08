@@ -14,7 +14,7 @@ Person p2 = new("Niels", "Olesen");
 Console.WriteLine($"{p.SayHello()}");
 Console.WriteLine($"{p2.SayHello()}");
 
-Køretøj<double> bil = new("Audi", "A6", 3.5);
+Køretøj<double> bil = new("Audi", "A6", 3.5, "Niels", "Olesen", "34343434");
 Console.WriteLine($"Bilinfo: {bil.GetAllKøretøjInfo()}");
 
 var minBilType = bil.GetType().GetCustomAttributes().OfType<UlovligKøretøj>().FirstOrDefault();
@@ -34,3 +34,5 @@ if (selectedAttribute != null)
 {
     Console.WriteLine($"Valg af tilbagekaldte bil er: {selectedAttribute.Mærke} {selectedAttribute.Model}, Fabriksfejl: {selectedAttribute.Fabriksfejl}");
 }
+
+Console.WriteLine($"Kunde info: {bil.KundeKontaktInfo.kundensFornavn} {bil.KundeKontaktInfo.kundensEfternavn}, Tlf: {bil.KundeKontaktInfo.kundensTlf}");

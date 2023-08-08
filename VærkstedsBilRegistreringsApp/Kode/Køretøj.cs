@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,13 +22,22 @@ internal class Køretøj<T>
 
     public T? Størrelse { get; set; }
 
-    
+    public record KundeKontaktInfoRecord(string? kundensFornavn, string? kundensEfternavn, string? kundensTlf);
+    public KundeKontaktInfoRecord KundeKontaktInfo { get; set; }
 
-    public Køretøj(string? mærke, string? model, T størrelse)
+    //public string? Mærke { get; set; }
+    //public string? Model { get; set; }
+   // public T Størrelse { get; set; }
+
+
+
+    public Køretøj(string? mærke, string? model, T størrelse, string? kundensFornavn, string? kundensEfternavn, string? kundensTlf)
     {
         Mærke = mærke;
         Model = model;
         Størrelse = størrelse;
+
+        KundeKontaktInfo = new KundeKontaktInfoRecord(kundensFornavn, kundensEfternavn, kundensTlf);
     }
 
 

@@ -9,9 +9,9 @@ namespace VærkstedsBilRegistreringsApp.Kode.ModelClasses
     internal class Teacher
     {
 
-        public string? Fornavn { get; set; }
+       // public string? Fornavn { get; set; }
 
-        public string? Efternavn { get; set; }
+       // public string? Efternavn { get; set; }
 
 
     }

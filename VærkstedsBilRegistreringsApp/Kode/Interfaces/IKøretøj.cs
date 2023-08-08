@@ -8,9 +8,9 @@ namespace VærkstedsBilRegistreringsApp.Kode.Interfaces
 {
     internal class IKøretøj
     {
-        public string? Mærke { get; set; }
+       // public string? Mærke { get; set; }
 
-        public string? Model { get; set; }
+      //  public string? Model { get; set; }
 
         
 
