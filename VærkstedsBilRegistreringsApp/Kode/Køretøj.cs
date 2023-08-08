@@ -4,36 +4,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VærkstedsBilRegistreringsApp.Kode
+namespace VærkstedsBilRegistreringsApp.Kode;
+
+[UlovligKøretøj(Mærke = "Genesis", Model = "GV80")]
+internal class Køretøj<T>
 {
-    [Ulovligkøretøj(Mærke = "Genesis", Model = "GV80")]
-    internal class Køretøj<T>
+
+    private const int _førsteGangsSyn = 5;
+
+    private const int _intervalSyn = 2;
+
+
+    public string? Mærke { get; set; }
+
+    public string? Model { get; set; }
+
+    public T? Størrelse { get; set; }
+
+    
+
+    public Køretøj(string? mærke, string? model, T størrelse)
     {
+        Mærke = mærke;
+        Model = model;
+        Størrelse = størrelse;
+    }
 
-        private const int _førsteGangsSyn = 5;
 
-        private const int _intervalSyn = 2;
-
-
-        public string? Mærke { get; set; }
-
-        public string? Model { get; set; }
-
-        public T? Størrelse { get; set; }
-
-        
-
-        public Køretøj(string? mærke, string? model, T størrelse)
+    [UlovligKøretøj(Mærke = "Toyota", Model = "Yaris")]
 
 
 
-            [Ulovligkøretøj(Mærke = "Toyota", Model = "Varis")]
-
-
-
-        public string GetAllKøretøjInfo()
-        {
-            return $"Mærke {Mærke}, Model: {Model}, Størrelse: {Størrelse}";
-        }
+    public string GetAllKøretøjInfo()
+    {
+        return $"Mærke {Mærke}, Model: {Model}, Størrelse: {Størrelse}";
     }
 }

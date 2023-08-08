@@ -4,15 +4,15 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VærkstedsBilRegistreringsApp.Kode.Attribute;
+using VærkstedsBilRegistreringsApp.Kode.Attributer;
 
 namespace VærkstedsBilRegistreringsApp.Kode.Enum;
 
-internal class TilbagekaldteBilerEnum
+internal enum TilbagekaldteBilerEnum
 {
-    [Display(Name = "Fiat Punto")]
+    [TilbagekaldteBilerAttributer(Mærke = "Fiat", Model = "Punto", Årgang = "01-01-2010", Fabriksfejl = "Udstødning")]
     FiatPunto,
-        [Display(Name = "Alfa Romeo")]
+    [TilbagekaldteBilerAttributer(Mærke = "Alfa", Model = "Romeo", Årgang = "01-08-2019", Fabriksfejl = "Styrtøjet")]
     AlfaRomeo
 
 }
