@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VærkstedsBilRegistreringsApp.Kode.Attributer;
 
 namespace VærkstedsBilRegistreringsApp.Kode.Arrays;
 
 internal class ArrayExamples
 {
 
+    // Til opgaven: Der hvor der står gør brug af "enum eller attributer" må vi også gerne vælge arrays eller lister.
+
+
+
+    // triple / = summary
     public void SetSimpleArray()
     {
         string[] bilmærker = new string[] { "Fiat", "Toyota", "Kia" };
@@ -20,7 +26,7 @@ internal class ArrayExamples
 
         Console.WriteLine(bilmærker[1]);
 
-        foreach(string item in bilmærker)
+        foreach (string item in bilmærker)
         {
             Console.WriteLine(item);
         }
@@ -37,10 +43,6 @@ internal class ArrayExamples
 
 
     }
-
-
-
-
 
     public void SetObjectArray()
     {
@@ -61,14 +63,14 @@ internal class ArrayExamples
         {
             object[] bil = (object[])arry;
             foreach (object item in bil)
-            Console.WriteLine($"{item.ToString()}");
+                Console.WriteLine($"{item.ToString()}");
         }
 
-        List<object> lstFiatPunto = new List<object>() 
-        { 
+        List<object> lstFiatPunto = new List<object>()
+        {
             "Fiat Punto",
             new DateTime(2010, 1, 1),
-            "Udstødning" 
+            "Udstødning"
         };
         List<object> lstAlfaRomeo = new List<object>()
         {
@@ -94,11 +96,11 @@ internal class ArrayExamples
 
     public void SetMultiDemArray()
     {
-        string[,] tilbagekaldteBiler = new string[2, 3]
+        string[,] tilbagekaldteBiler = new string[2, 4]
 
             {
-                {"Fiat Punto", "2010, 1, 1", "Udstødning" },
-                {"AlfaRomeo Giulia", "2019, 8, 1", "Styrtøj" }
+                {"Fiat Punto", "2010, 1, 1", "Udstødning", "2"},
+                {"AlfaRomeo Giulia", "2019, 8, 1", "Styrtøj", "5"}
             };
 
 
@@ -129,18 +131,44 @@ internal class ArrayExamples
         int level0 = tilbagekaldteBiler.GetUpperBound(0);
         int level1 = tilbagekaldteBiler.GetUpperBound(1);
         //int level2 = tilbagekaldteBiler.GetUpperBound(2);
-    
-    
+
+
         for (int i = 0; i <= level0; i++)
         {
             for (int j = 0; j <= level1; j++)
             {
                 string? res = tilbagekaldteBiler[i, j].ToString();
                 Console.WriteLine(res);
-            }  
+            }
         }
 
-    
+
+    }
+
+    public void SetJaggedArray()
+    {
+
+        SetObjectArray();
+
+        string[][] tilbagekaldteBiler = new string[][]
+        {
+        new string[] { "Fiat Punto", "2010, 1, 1", "Udstødning", "2" },
+        new string[] { "Alfa Romeo", "2019, 8, 1", "Udstødning" }
+        };
+
+    string alfaÅrgang = tilbagekaldteBiler[1][1];
+        Console.WriteLine($"{alfaÅrgang}");
+
+
+        foreach (string[] item0 in tilbagekaldteBiler)
+        {
+            string[] bil = item0;
+            foreach (object item in bil)
+                Console.WriteLine($"{item}");
+        }
+
+
+
     }
 
 }

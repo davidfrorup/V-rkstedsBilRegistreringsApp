@@ -6,20 +6,24 @@ using VærkstedsBilRegistreringsApp.Kode.Attributer;
 using VærkstedsBilRegistreringsApp.Kode.Enum;
 
 ArrayExamples ArrayExamples = new ArrayExamples();
-ArrayExamples.SetMultiDemArray();
+ArrayExamples.SetSimpleArray();
 
 
-
+#region Test Person object
 Person p = new();
 Person.Alder = 50;
 Person p2 = new("Niels", "Olesen");
 
-
 Console.WriteLine($"{p.SayHello()}");
 Console.WriteLine($"{p2.SayHello()}");
+#endregion
 
+
+#region Test Køretøj
 Køretøj<double> bil = new("Audi", "A6", 3.5, "Niels", "Olesen", "34343434");
 Console.WriteLine($"Bilinfo: {bil.GetAllKøretøjInfo()}");
+#endregion
+
 
 var minBilType = bil.GetType().GetCustomAttributes().OfType<UlovligKøretøj>().FirstOrDefault();
 
