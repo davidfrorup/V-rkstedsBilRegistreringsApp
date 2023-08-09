@@ -1,10 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 using VærkstedsBilRegistreringsApp.Kode;
+using VærkstedsBilRegistreringsApp.Kode.Arrays;
 using VærkstedsBilRegistreringsApp.Kode.Attributer;
 using VærkstedsBilRegistreringsApp.Kode.Enum;
 
-Console.Clear();
+ArrayExamples ArrayExamples = new ArrayExamples();
+ArrayExamples.SetMultiDemArray();
+
+
 
 Person p = new();
 Person.Alder = 50;
